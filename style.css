@@ -582,7 +582,7 @@ p {
 .contact-form input[type="submit"],
 .contact-form input[type="reset"] {
   display: inline-block;
-  background: #040128;
+  background: #060166;
   color: #ffffff; 
   padding: 12px 25px;
   border-radius: 8px; 
@@ -645,3 +645,4 @@ footer {
 footer small {
   display: block;
 }
+
