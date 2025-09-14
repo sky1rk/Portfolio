@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Navbar Styling --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+  line-height: 70px;
+  background: transparent; 
+  color: #fff;
+  z-index: 1111;
+  font-family: 'Bungee', sans-serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+  background-color: #000000a5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo and brand */
+.brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#logo {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-link:hover {
+  opacity: 0.9;
+  color: #060166;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #060166;
+}
+
+/* Social links */
+.links a {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #060166;
+}
+
+/* --- Hamburger menu (mobile) --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    width: 200px;
+    background-color: #000000b8;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.3s ease;
+    padding: 20px 0;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+
+  .links {
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* --- Fix home overlap issue --- */
+main {
+  padding-top: 70px; 
+}
+
+/* Background */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== HOME SECTION ===== */
+#home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #060166 0%, #000000 70%, #000000 100%);
+  padding: 80px 60px;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left Column (Text) */
+.cols0 {
+  flex: 1;
+}
+
+.topline {
+  font-size: 2.5rem;
+  color: #060166; 
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 15px 0;
+  color: #fff; 
+}
+
+.multitext {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  line-height: 1.6;
+  max-width: 500px;
+  color: #e0e0e0;
+}
+
+/* CV Button */
+.cv-btn {
+  display: inline-block;
+  background: #060166; 
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cv-btn:hover {
+  background: #0e0627; 
+  color: #060166; 
+  border-color: #060166;
+}
+
+
+/* Right Column (Image + Shapes) */
+.cols1 {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; 
+}
+
+/* Container for image */
+.imgbox {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Main image */
+.home-image {
+  width: 100%;
+  border-radius: 16px;
+  z-index: 2;
+  position: relative; 
+  transform: translateX(20%); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.bg_element1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 50%; 
+  z-index: 1; 
+  object-fit: cover;
+}
+
+/* Individual positions and sizes */
+.hobby1 { top: 5%; left: 5%; width: 300px; animation-delay: 0s; }
+.hobby2 { top: 40%; left: 60%; width: 150px; animation-delay: 1.5s; }
+.hobby3 { top: 50%; right: 50%; width: 250px; animation-delay: 3s; }
+.hobby4 { top: 50%; right: 60%; width: 100px; animation-delay: 1.5s; }
+.hobby5 { top: 50%; left: 80%; width: 400px; animation-delay: 3s; }
+.hobby6 { top: 10%; right: 10%; width: 90px; animation-delay: 1.5s; }
+.hobby7 { top: 20%; left: 60%; width: 220px; animation-delay: 3s; }
+
+/* Floating animation keyframes */
+@keyframes floatHobby {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-15px) translateX(10px); }
+  50% { transform: translateY(10px) translateX(-10px); }
+  75% { transform: translateY(-10px) translateX(5px); }
+}
+
+/* Ensure home section text and image are above floating elements */
+.cols0, .cols1, .wrapper, #home h1, #home p, .home-image, .btns, .topline, .multitext {
+  position: relative;
+  z-index: 1; 
+}
+
+/* --- ABOUT SECTION --- */
+#about {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 60px; 
+  background: linear-gradient(135deg, #060166 0%, #000000 50%, #060166 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Container for image + text */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Left side image */
+.about-image {
+  flex: 0 0 auto;
+  max-width: 300px;
+  width: 100%;
+  border: 5px solid gold;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(213, 225, 0, 0.6);
+  object-fit: cover;
+  order: 0; 
+}
+
+/* Right side content: centered header + paragraph */
+.about-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  order: 1;
+  text-align: center;
+}
+
+/* Header */
+.about-text h2 {
+  font-size: 3rem;
+  color: #FFD700; 
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  max-width: 600px;
+}
+
+/* Base floating element style */
+.float-element {
+  position: absolute;
+  z-index: 0; 
+  pointer-events: none; 
+  animation: floatHobby 8s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+/* Individual positions and sizes */
+.hobby8 { top: 70%; left: 60%; width: 350px; animation-delay: 0s; }
+.hobby9 { top: 1%; left: 1%; width: 300px; animation-delay: 1.5s; }
+.hobby10 { top: 30%; left: 90%; width: 150px; animation-delay: 3s; }
+.hobby11 { top: 60%; left: 70%; width: 200; animation-delay: 1.5s; }
+
+/* Floating animation keyframes */
+@keyframes floatHobby {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-15px) translateX(10px); }
+  50% { transform: translateY(10px) translateX(-10px); }
+  75% { transform: translateY(-10px) translateX(5px); }
+}
+
+/* Ensure about section text and image are above floating elements */
+.about-container, #about h2, #about p, .about-image { 
+  position: relative;
+  z-index: 1; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column-reverse; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image,
+  .about-text p,
+  .about-text h2 {
+    max-width: 90%;
+  }
+}
+
+/* --- PORTFOLIO SECTION --- */
+#portfolio {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 60px;
+  background: radial-gradient(circle, #000000 0%, #060166 50%, #000000 100%);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#portfolio h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #FFD700;
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  background: rgba(6, 1, 102, 0.3); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Slides wrapper: horizontal layout */
+.slider .slide {
+  display: none;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px 40px;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Show the first slide by default */
+.slider .slide.active {
+  display: flex;
+}
+
+/* Slide description */
+.slider .description {
+  flex: 1; 
+  font-size: 1.2rem;
+  color: #FFD700;
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.5;
+}
+
+/* Slide image */
+.slider .slide img {
+  flex: 1; 
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 30px;
+  object-fit: cover; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+
+/* Slider buttons */
+.slider .prev,
+.slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 5;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+  background-color: rgba(1, 0, 5, 0.8);
+  color: #ffffff;
+}
+
+.slider .prev {
+  left: 10px;
+}
+
+.slider .next {
+  right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .slider .slide {
+    flex-direction: column; 
+    text-align: center;
+    padding: 20px;
+  }
+
+  .slider .description {
+    margin-bottom: 15px;
+  }
+
+  .slider .slide img {
+    max-width: 100%;
+  }
+}
+
+/* --- FOOTER --- */
+footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #060166, #000000, #060166); 
+  color: #FFD700;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+footer small {
+  display: block;
+}
