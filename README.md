@@ -11,6 +11,8 @@ This is my personal portfolio website, built using HTML, CSS, and JavaScript. It
 - Responsive design for desktop, tablet, and mobile devices.
 - Interactive elements and smooth transitions using JavaScript and CSS.
 
+Note: The Send button currently opens the email client and does not send emails automatically. If the user has no default email client, it may open the browser or fail.
+
 ## Technologies Used
 
 - HTML5 for page structure
