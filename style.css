@@ -522,12 +522,119 @@ p {
   }
 }
 
+/* --- Contact --- */
+#contact {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 80px 10%;
+  min-height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(350deg , #060166,  #000000,  #060166); 
+}
+
+/* Left side: Form */
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 16px;
+  background: transparent; 
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff; 
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 2px solid #1b263b;
+  border-radius: 12px;
+  background-color: rgba(22, 36, 71, 0.5); 
+  color: #ffffff; 
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0c0040; 
+  outline: none;
+  box-shadow: 0 0 10px rgba(2, 15, 28, 0.5); 
+}
+
+.contact-form input[type="submit"],
+.contact-form input[type="reset"] {
+  display: inline-block;
+  background: #040128;
+  color: #ffffff; 
+  padding: 12px 25px;
+  border-radius: 8px; 
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent; 
+}
+
+.contact-form input[type="submit"]:hover,
+.contact-form input[type="reset"]:hover {
+  background: #09003d; 
+  color: #ffd700; 
+  border-color: #040128; 
+  box-shadow: 0 4px 15px rgba(7, 19, 32, 0.4);
+}
+
+
+/* Right side: Header + Image */
+.contact-image {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+.contact-image h2 {
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.contact-image img:hover {
+  transform: scale(1.05);
+}
+
 /* --- FOOTER --- */
 footer {
   width: 100%;
   padding: 20px 0;
   text-align: center;
-  background: linear-gradient(90deg, #060166, #000000, #060166); 
+  background: linear-gradient(90deg, #000000, #060166, #000000); 
   color: #FFD700;
   font-family: 'Bungee', sans-serif;
   font-size: 1rem;
