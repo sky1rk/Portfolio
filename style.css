@@ -65,6 +65,11 @@ header.scrolled {
 }
 
 /* Navigation menu */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -88,6 +93,11 @@ nav ul li a:hover {
 }
 
 /* Social links */
+.links {
+  display: flex;
+  align-items: center;
+}
+
 .links a {
   font-size: 20px;
   color: #fff;
@@ -105,6 +115,7 @@ nav ul li a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1200;
 }
 
 .menu-toggle span {
@@ -115,18 +126,19 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
-/* Mobile responsive */
+/* --- Mobile responsive --- */
 @media (max-width: 768px) {
   nav {
-    position: absolute;
+    position: fixed;
     top: 70px;
     right: -100%;
-    width: 200px;
-    background-color: #000000b8;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background-color: #000000e6;
     flex-direction: column;
     align-items: center;
     transition: right 0.3s ease;
-    padding: 20px 0;
+    padding: 30px 0;
   }
 
   nav.active {
@@ -136,14 +148,16 @@ nav ul li a:hover {
   nav ul {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
 
   nav ul li {
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
   .links {
-    margin-top: 10px;
+    margin-top: 20px;
+    flex-direction: row;
   }
 
   .menu-toggle {
@@ -161,6 +175,7 @@ body {
   background-color: #000;
   color: #fff;
 }
+
 
 /* ===== HOME SECTION ===== */
 #home {
@@ -305,6 +320,7 @@ p {
   display: flex;
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
 }
 
 /* Container for image + text */
@@ -363,13 +379,16 @@ p {
   pointer-events: none; 
   animation: floatHobby 8s ease-in-out infinite;
   opacity: 0.3;
+  max-width: 30%;   
+  height: auto;
 }
 
+
 /* Individual positions and sizes */
-.hobby8 { top: 70%; left: 60%; width: 350px; animation-delay: 0s; }
-.hobby9 { top: 1%; left: 1%; width: 300px; animation-delay: 1.5s; }
-.hobby10 { top: 30%; left: 90%; width: 150px; animation-delay: 3s; }
-.hobby11 { top: 60%; left: 70%; width: 200; animation-delay: 1.5s; }
+.hobby8 { top: 70%; left: 55%; width: clamp(150px, 25vw, 300px); }
+.hobby9 { top: 5%; left: 5%; width: clamp(120px, 20vw, 250px); }
+.hobby10 { top: 30%; left: 80%; width: clamp(80px, 15vw, 180px); }
+.hobby11 { top: 60%; left: 65%; width: clamp(100px, 18vw, 220px); }
 
 /* Floating animation keyframes */
 @keyframes floatHobby {
