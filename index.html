@@ -180,7 +180,9 @@
 .dark .dark-hero-image{opacity:1;}
 
 /* Plain section navigation, vertically centered on the right side */
-.side-nav{display:flex;}
+.side-nav{display:flex;--nav-right:6rem;right:calc(max(0px, (100vw - 1240px) / 2) + var(--nav-right));}
+@media (min-width:640px){.side-nav{--nav-right:7rem;}}
+@media (min-width:1024px){.side-nav{--nav-right:8rem;}}
 .side-nav-link{position:relative;white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .45s cubic-bezier(.22,1,.36,1),text-shadow .45s cubic-bezier(.22,1,.36,1);}
 /* Cascade the color sweep upward, one link at a time from bottom to top */
 .side-nav .side-nav-link:nth-child(5){transition-delay:0ms;}
@@ -219,7 +221,7 @@ body.in-content .side-nav-link::after{background:rgb(var(--c-primary));}
 
 <body class="bg-background font-body-md text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
 <!-- Fixed section navigation, centered on the right side (no card chrome) -->
-<nav class="side-nav fixed right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-50 flex-col gap-2 sm:gap-3 text-[14px] sm:text-[15px] lg:text-[16px] leading-tight font-semibold" aria-label="Section navigation">
+<nav class="side-nav fixed top-1/2 -translate-y-1/2 z-50 flex-col gap-2 sm:gap-3 text-[14px] sm:text-[15px] lg:text-[16px] leading-tight font-semibold" aria-label="Section navigation">
   <a class="side-nav-link py-1" href="#hero" title="Home">Home</a>
   <a class="side-nav-link py-1" href="#about" title="About">About</a>
   <a class="side-nav-link py-1" href="#creations" title="Creations">Creations</a>
