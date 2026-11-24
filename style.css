@@ -153,7 +153,9 @@
 /* Plain section navigation, vertically centered on the right side */
 .side-nav{display:flex;right:1rem;}
 /* Hero quick actions sit at the far right edge, outside the padded content column */
-.hero-top-actions{position:fixed;top:1rem;right:1rem;z-index:50;}
+.hero-top-actions{--page-pad-right:6rem;margin-right:calc(1rem - var(--page-pad-right) - max(0px, (100vw - 1240px) / 2));}
+@media (min-width:640px){.hero-top-actions{--page-pad-right:7rem;}}
+@media (min-width:1024px){.hero-top-actions{--page-pad-right:8rem;}}
 .side-nav-link{position:relative;white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .45s cubic-bezier(.22,1,.36,1),text-shadow .45s cubic-bezier(.22,1,.36,1);}
 /* Cascade the color sweep upward, one link at a time from bottom to top */
 .side-nav .side-nav-link:nth-child(5){transition-delay:0ms;}
