@@ -179,13 +179,11 @@
 .dark .light-hero-image{opacity:0;}
 .dark .dark-hero-image{opacity:1;}
 
-/* Dark-mode quick navigation dock */
-/* Fixed side navigation: visible on desktop in both themes */
+/* Right-aligned top navigation, level with the theme toggle */
 .side-nav{display:none;}
 @media (min-width:1024px){.side-nav{display:flex;}}
-.dark .side-nav{background:rgba(20,24,45,.9);border-color:rgba(255,255,255,.1);box-shadow:0 8px 32px rgba(0,0,0,.6);}
 .side-nav-link{white-space:nowrap;}
-.side-nav-link[aria-current="location"]{background:rgb(var(--c-primary-container) / .2);color:rgb(var(--c-primary));}
+.side-nav-link[aria-current="location"]{background:rgba(255,255,255,.2);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);}
 
 /* Dark-mode hero accent tuning */
 .dark .hero-badge{background:rgba(30,27,75,.7);color:#c7d2fe;border-color:rgba(180,169,252,.3);box-shadow:0 0 20px rgba(180,169,252,.2);}
@@ -241,8 +239,15 @@
 </div>
 <!-- Hero Content Layer -->
 <div class="relative z-10 w-full max-w-[1240px] mx-auto px-margin py-8 lg:py-12 flex-1 flex flex-col justify-between">
-<!-- Top row status / quick actions (NO top navigation tabs, theme toggle & social capsules only) -->
-<div class="flex justify-end items-center gap-4 font-label-md text-label-md text-white/90 font-semibold">
+<!-- Top row: section links on the right, aligned with the theme toggle -->
+<div class="flex flex-wrap justify-end items-center gap-x-4 gap-y-3 font-label-md text-label-md text-white/90 font-semibold">
+<nav class="side-nav items-center gap-1 p-1 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/20 shadow-lg" aria-label="Section navigation">
+  <a class="side-nav-link px-3 py-1.5 rounded-full text-white/85 hover:text-white hover:bg-white/10 transition-all" href="#hero" title="Home">Home</a>
+  <a class="side-nav-link px-3 py-1.5 rounded-full text-white/85 hover:text-white hover:bg-white/10 transition-all" href="#about" title="About">About</a>
+  <a class="side-nav-link px-3 py-1.5 rounded-full text-white/85 hover:text-white hover:bg-white/10 transition-all" href="#creations" title="Creations">Creations</a>
+  <a class="side-nav-link px-3 py-1.5 rounded-full text-white/85 hover:text-white hover:bg-white/10 transition-all" href="#education" title="Education">Education</a>
+  <a class="side-nav-link px-3 py-1.5 rounded-full text-white/85 hover:text-white hover:bg-white/10 transition-all" href="#contact" title="Contact">Contact</a>
+</nav>
 <div class="flex items-center gap-2">
 <a class="w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white/90 hover:text-white border border-white/20 shadow-lg backdrop-blur-md flex items-center justify-center transition-all hover:scale-105" href="https://github.com/sky1rk" rel="noreferrer" target="_blank" title="GitHub">
 <span class="material-symbols-outlined text-[18px]">code</span>
@@ -274,49 +279,21 @@
 <span>EXPLORE CREATIONS</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
-<a class="hero-secondary-btn px-space-md py-3 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/25 text-white hover:text-pink-200 hover:bg-slate-900/80 font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 shadow-[0_4px_16px_rgba(0,0,0,0.2)]" download="Wilfame_Esponilla_CV.pdf" href="mailto:wilfame.esponilla@wvsu.edu.ph?subject=Resume%20Request%20-%20Wilfame%20Esponilla">
+<a class="hero-secondary-btn px-space-md py-3 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/25 text-white hover:text-pink-200 hover:bg-slate-900/80 font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 shadow-[0_4px_16px_rgba(0,0,0,0.2)]" download="Wilfame_Esponilla_CV.pdf" href="resume.pdf">
 <span class="material-symbols-outlined text-[18px]">download</span>
 <span>DOWNLOAD CV</span>
 </a>
 </div>
 </div>
-<!-- Vertical right-hand navigation list -->
+<!-- Compact section links for smaller screens -->
 <nav class="lg:hidden flex flex-row items-start justify-start flex-wrap gap-4 font-headline-sm text-headline-sm text-slate-200 font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#about"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>About</a>
-<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#skills"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Skills</a>
-<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#creations"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Creations</a>
-<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#education"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Education</a>
-<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#contact"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Contact</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#hero">Home</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#about">About</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#creations">Creations</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#education">Education</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#contact">Contact</a>
 </nav>
 </div>
-
-<!-- Fixed side navigation (desktop) -->
-<nav class="side-nav fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col gap-1 p-2 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md border border-surface-container-high/70 shadow-[0_8px_32px_-6px_rgba(138,127,214,0.18)]" aria-label="Section navigation">
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#hero" title="Home">
-    <span class="material-symbols-outlined text-[20px]">home</span>
-    <span class="font-label-md text-label-md font-semibold">Home</span>
-  </a>
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#about" title="About">
-    <span class="material-symbols-outlined text-[20px]">person</span>
-    <span class="font-label-md text-label-md font-semibold">About</span>
-  </a>
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#skills" title="Skills">
-    <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
-    <span class="font-label-md text-label-md font-semibold">Skills</span>
-  </a>
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#creations" title="Creations">
-    <span class="material-symbols-outlined text-[20px]">dashboard_customize</span>
-    <span class="font-label-md text-label-md font-semibold">Creations</span>
-  </a>
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#education" title="Education">
-    <span class="material-symbols-outlined text-[20px]">school</span>
-    <span class="font-label-md text-label-md font-semibold">Education</span>
-  </a>
-  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#contact" title="Contact">
-    <span class="material-symbols-outlined text-[20px]">mail</span>
-    <span class="font-label-md text-label-md font-semibold">Contact</span>
-  </a>
-</nav>
 
 <!-- Whimsical banner strip with frosted glass backdrop -->
 <div class="hero-banner flex flex-wrap items-center justify-between gap-3 py-3 px-5 rounded-2xl bg-slate-900/65 backdrop-blur-md border border-white/15 text-slate-200 font-label-sm text-label-sm shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
