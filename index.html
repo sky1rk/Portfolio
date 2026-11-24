@@ -181,13 +181,13 @@
 
 /* Plain section navigation, vertically centered on the right side */
 .side-nav{display:flex;}
-.side-nav-link{white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .55s cubic-bezier(.22,1,.36,1),text-shadow .55s cubic-bezier(.22,1,.36,1);}
-/* Cascade the color sweep upward, from the bottom link to the top */
+.side-nav-link{white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .45s cubic-bezier(.22,1,.36,1),text-shadow .45s cubic-bezier(.22,1,.36,1);}
+/* Cascade the color sweep upward, one link at a time from bottom to top */
 .side-nav .side-nav-link:nth-child(5){transition-delay:0ms;}
-.side-nav .side-nav-link:nth-child(4){transition-delay:50ms;}
-.side-nav .side-nav-link:nth-child(3){transition-delay:100ms;}
-.side-nav .side-nav-link:nth-child(2){transition-delay:150ms;}
-.side-nav .side-nav-link:nth-child(1){transition-delay:200ms;}
+.side-nav .side-nav-link:nth-child(4){transition-delay:100ms;}
+.side-nav .side-nav-link:nth-child(3){transition-delay:200ms;}
+.side-nav .side-nav-link:nth-child(2){transition-delay:300ms;}
+.side-nav .side-nav-link:nth-child(1){transition-delay:400ms;}
 .side-nav .side-nav-link:hover{transition-delay:0ms;}
 body.in-content .side-nav-link{color:rgb(var(--c-on-surface));text-shadow:none;}
 .side-nav-link:hover{color:#fbcfe8;}
@@ -964,8 +964,12 @@ body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primar
     updateActiveNav();
 
     const heroSection = document.getElementById('hero');
+    const sideNav = document.querySelector('.side-nav');
     const updateNavColor = () => {
-      if (heroSection) document.body.classList.toggle('in-content', heroSection.getBoundingClientRect().bottom <= 0);
+      if (!heroSection) return;
+      const navBox = sideNav ? sideNav.getBoundingClientRect() : null;
+      const navCenterY = navBox ? navBox.top + navBox.height / 2 : window.innerHeight / 2;
+      document.body.classList.toggle('in-content', heroSection.getBoundingClientRect().bottom <= navCenterY);
     };
     window.addEventListener('scroll', updateNavColor, { passive: true });
     updateNavColor();
