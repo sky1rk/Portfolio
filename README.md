@@ -6,7 +6,7 @@ The current design is a single-page, responsive "Ghibli Reverie" portfolio with 
 
 ## Features
 
-- Plain section navigation vertically centered on the right side on desktop, with a compact in-hero nav on smaller screens
+- Plain section navigation vertically centered on the right side at every screen size, with responsive spacing and text sizing
 - Downloadable CV (`resume.pdf`) linked from the hero button
 - About section with technical skills and competencies
 - Featured creations/project showcase
