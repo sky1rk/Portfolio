@@ -33,7 +33,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"rgb(var
     toast.classList.add('hidden');
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/wilfame.esponilla@wvsu.edu.ph', {
+      const response = await fetch('https://formsubmit.co/ajax/8061ba07f988d868d954fcee419481a6', {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: payload
