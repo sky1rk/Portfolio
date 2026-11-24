@@ -13,22 +13,52 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"rgb(var
     }
     syncThemeMeta();
 
-  function handleFormSubmit() {
+  async function handleFormSubmit() {
     const btn = document.getElementById('submitBtn');
     const toast = document.getElementById('formSuccessToast');
     const form = document.getElementById('contactForm');
     if (!btn || !toast || !form) return;
 
+    const successHtml = toast.innerHTML;
+    const successClass = toast.className;
+    const buttonLabel = '<span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span>Send Message</span>';
+    const payload = new FormData(form);
+    const sender = ((payload.get('name') || 'Visitor') + '').trim() || 'Visitor';
+    payload.append('_subject', `Portfolio message from ${sender}`);
+    payload.append('_captcha', 'false');
+    payload.append('_template', 'table');
+
     btn.disabled = true;
     btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Sending...</span>';
+    toast.classList.add('hidden');
 
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span>Send Message</span>';
-      toast.classList.remove('hidden');
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/wilfame.esponilla@wvsu.edu.ph', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: payload
+      });
+      if (!response.ok) throw new Error(`Email request failed: ${response.status}`);
       form.reset();
+      toast.className = successClass;
+      toast.innerHTML = successHtml;
+    } catch (error) {
+      toast.className = 'hidden p-3.5 rounded-2xl bg-error-container text-on-error-container font-body-sm text-body-sm flex items-center gap-2 shadow-sm';
+      toast.innerHTML = '<span class="material-symbols-outlined text-[20px]">error</span><span>Could not send right now. Please email me directly.</span>';
+      const subject = encodeURIComponent(`Portfolio message from ${sender}`);
+      const body = encodeURIComponent([
+        `Name: ${sender}`,
+        `Email: ${payload.get('email') || ''}`,
+        '',
+        payload.get('message') || ''
+      ].join('\n'));
+      window.location.href = `mailto:wilfame.esponilla@wvsu.edu.ph?subject=${subject}&body=${body}`;
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = buttonLabel;
+      toast.classList.remove('hidden');
       setTimeout(() => toast.classList.add('hidden'), 5000);
-    }, 700);
+    }
   }
 
   function toggleTheme() {
