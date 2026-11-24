@@ -4,14 +4,18 @@ This is my personal portfolio website, built using HTML, CSS, and JavaScript. It
 
 ## Features
 
-- Home page with a welcome message and downloadable CV.
-- About Me page highlighting personal background, skills, and interests.
-- Portfolio page featuring projects displayed with a slider for easy navigation.
-- Contact page for reaching out via email.
-- Responsive design for desktop, tablet, and mobile devices.
-- Interactive elements and smooth transitions using JavaScript and CSS.
-
-Note: The Send button currently opens the email client and does not send emails automatically. If the user has no default email client, it may open the browser or fail.
+- Home page with a welcome message, falling sakura petals, and a Download CV button for `resume.pdf`
+- GitHub, email, and theme buttons in the hero section only
+- Light/dark theme toggle that remembers the selected theme
+- Plain-text section navigation fixed and vertically centered on the right side at all screen sizes, with an underline marking the active section and a bottom-to-top color change as the hero scrolls away
+- About Me section with a biography and technical skills toolbelt
+- Featured Creations section with four projects (Kalye Corazón, VERIFYX, Pal.se, and Notiva), each with an image, technology tags, and an external link
+- Education and Key Achievements section covering academic background, honors, coursework, leadership, and competition recognitions
+- Contact section with email, location, phone, and social links
+- Contact form that sends messages directly to email and shows a confirmation message, with a prefilled email fallback if delivery fails
+- Responsive design for desktop, tablet, and mobile devices
+- Scroll-reveal animations that are disabled when reduced motion is preferred
+- Footer with a back-to-top link
 
 ## Technologies Used
 
