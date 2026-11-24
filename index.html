@@ -1,176 +1,983 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Esponilla_Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for social icons -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Wilfame Esponilla — BS Computer Science student, software developer, and creative technologist." name="description">
+  <meta content="#fdf8ff" name="theme-color">
+  <title>Wilfame Esponilla | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"rgb(var(--c-background) / <alpha-value>)", "border-highlight":"rgba(241, 239, 255, 0.28)", "border-subtle":"rgba(213, 208, 247, 0.12)", "canvas-abyss":"rgb(var(--c-canvas-abyss) / <alpha-value>)", "error":"rgb(var(--c-error) / <alpha-value>)", "error-container":"rgb(var(--c-error-container) / <alpha-value>)", "glow-mint":"rgb(var(--c-glow-mint) / <alpha-value>)", "glow-violet":"rgb(var(--c-glow-violet) / <alpha-value>)", "inverse-on-surface":"rgb(var(--c-inverse-on-surface) / <alpha-value>)", "inverse-primary":"rgb(var(--c-inverse-primary) / <alpha-value>)", "inverse-surface":"rgb(var(--c-inverse-surface) / <alpha-value>)", "lantern-amber":"rgb(var(--c-lantern-amber) / <alpha-value>)", "lantern-coral":"rgb(var(--c-lantern-coral) / <alpha-value>)", "on-background":"rgb(var(--c-on-background) / <alpha-value>)", "on-error":"rgb(var(--c-on-error) / <alpha-value>)", "on-error-container":"rgb(var(--c-on-error-container) / <alpha-value>)", "on-primary":"rgb(var(--c-on-primary) / <alpha-value>)", "on-primary-container":"rgb(var(--c-on-primary-container) / <alpha-value>)", "on-primary-fixed":"rgb(var(--c-on-primary-fixed) / <alpha-value>)", "on-primary-fixed-variant":"rgb(var(--c-on-primary-fixed-variant) / <alpha-value>)", "on-secondary":"rgb(var(--c-on-secondary) / <alpha-value>)", "on-secondary-container":"rgb(var(--c-on-secondary-container) / <alpha-value>)", "on-secondary-fixed":"rgb(var(--c-on-secondary-fixed) / <alpha-value>)", "on-secondary-fixed-variant":"rgb(var(--c-on-secondary-fixed-variant) / <alpha-value>)", "on-surface":"rgb(var(--c-on-surface) / <alpha-value>)", "on-surface-variant":"rgb(var(--c-on-surface-variant) / <alpha-value>)", "on-tertiary":"rgb(var(--c-on-tertiary) / <alpha-value>)", "on-tertiary-container":"rgb(var(--c-on-tertiary-container) / <alpha-value>)", "on-tertiary-fixed":"rgb(var(--c-on-tertiary-fixed) / <alpha-value>)", "on-tertiary-fixed-variant":"rgb(var(--c-on-tertiary-fixed-variant) / <alpha-value>)", "outline":"rgb(var(--c-outline) / <alpha-value>)", "outline-variant":"rgb(var(--c-outline-variant) / <alpha-value>)", "primary":"rgb(var(--c-primary) / <alpha-value>)", "primary-container":"rgb(var(--c-primary-container) / <alpha-value>)", "primary-fixed":"rgb(var(--c-primary-fixed) / <alpha-value>)", "primary-fixed-dim":"rgb(var(--c-primary-fixed-dim) / <alpha-value>)", "secondary":"rgb(var(--c-secondary) / <alpha-value>)", "secondary-container":"rgb(var(--c-secondary-container) / <alpha-value>)", "secondary-fixed":"rgb(var(--c-secondary-fixed) / <alpha-value>)", "secondary-fixed-dim":"rgb(var(--c-secondary-fixed-dim) / <alpha-value>)", "surface":"rgb(var(--c-surface) / <alpha-value>)", "surface-bright":"rgb(var(--c-surface-bright) / <alpha-value>)", "surface-container":"rgb(var(--c-surface-container) / <alpha-value>)", "surface-container-high":"rgb(var(--c-surface-container-high) / <alpha-value>)", "surface-container-highest":"rgb(var(--c-surface-container-highest) / <alpha-value>)", "surface-container-low":"rgb(var(--c-surface-container-low) / <alpha-value>)", "surface-container-lowest":"rgb(var(--c-surface-container-lowest) / <alpha-value>)", "surface-dim":"rgb(var(--c-surface-dim) / <alpha-value>)", "surface-elevated":"rgb(var(--c-surface-elevated) / <alpha-value>)", "surface-midnight":"rgb(var(--c-surface-midnight) / <alpha-value>)", "surface-slate":"rgb(var(--c-surface-slate) / <alpha-value>)", "surface-tint":"rgb(var(--c-surface-tint) / <alpha-value>)", "surface-variant":"rgb(var(--c-surface-variant) / <alpha-value>)", "tertiary":"rgb(var(--c-tertiary) / <alpha-value>)", "tertiary-container":"rgb(var(--c-tertiary-container) / <alpha-value>)", "tertiary-fixed":"rgb(var(--c-tertiary-fixed) / <alpha-value>)", "tertiary-fixed-dim":"rgb(var(--c-tertiary-fixed-dim) / <alpha-value>)", "text-alabaster":"rgb(var(--c-text-alabaster) / <alpha-value>)", "text-lavender":"rgb(var(--c-text-lavender) / <alpha-value>)", "text-muted":"rgb(var(--c-text-muted) / <alpha-value>)"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.25rem","space-xl":"2.5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin":"2rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","margin-mobile":"1rem","space-md":"1rem"},"fontFamily":{"label-sm":["Quicksand"],"display":["Epilogue"],"headline-md":["Epilogue"],"body-lg":["Quicksand"],"title-md":["Quicksand"],"body-md":["Quicksand"],"headline-sm":["Epilogue"],"headline-lg-mobile":["Epilogue"],"label-md":["Quicksand"],"display-mobile":["Epilogue"],"body-sm":["Quicksand"],"headline-lg":["Epilogue"],"label-lg":["Quicksand"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display":["48px",{"lineHeight":"58px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-mobile":["34px",{"lineHeight":"42px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script>
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('portfolio-theme'); } catch (error) {}
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+      document.documentElement.style.colorScheme = theme;
+    })();
+    function syncThemeMeta() {
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', document.documentElement.classList.contains('dark') ? '#0e1223' : '#fdf8ff');
+    }
+    syncThemeMeta();
+  </script>
+  <style>
+@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+:root {
+  --c-on-tertiary: 255 255 255;
+  --c-surface-container: 241 235 255;
+  --c-inverse-primary: 200 191 255;
+  --c-on-secondary: 255 255 255;
+  --c-surface-dim: 221 215 238;
+  --c-tertiary-container: 165 95 125;
+  --c-on-error: 255 255 255;
+  --c-tertiary-fixed-dim: 255 176 207;
+  --c-error-container: 255 218 214;
+  --c-on-primary-fixed: 25 3 97;
+  --c-error: 186 26 26;
+  --c-surface-container-high: 236 229 252;
+  --c-on-surface: 28 25 42;
+  --c-primary-fixed: 229 222 255;
+  --c-primary: 91 80 164;
+  --c-primary-container: 116 105 190;
+  --c-inverse-surface: 49 46 63;
+  --c-background: 253 248 255;
+  --c-secondary-container: 137 188 254;
+  --c-on-secondary-fixed-variant: 0 72 129;
+  --c-surface-variant: 230 223 246;
+  --c-tertiary-fixed: 255 216 229;
+  --c-on-primary: 255 255 255;
+  --c-tertiary: 136 71 100;
+  --c-inverse-on-surface: 244 238 255;
+  --c-outline: 120 117 130;
+  --c-secondary-fixed-dim: 162 201 255;
+  --c-surface-tint: 94 83 166;
+  --c-surface: 253 248 255;
+  --c-on-primary-fixed-variant: 70 58 141;
+  --c-on-tertiary-fixed-variant: 111 50 78;
+  --c-on-surface-variant: 72 69 81;
+  --c-on-background: 28 25 42;
+  --c-on-tertiary-container: 255 251 255;
+  --c-surface-container-lowest: 255 255 255;
+  --c-surface-container-highest: 230 223 246;
+  --c-secondary: 39 96 156;
+  --c-surface-bright: 253 248 255;
+  --c-primary-fixed-dim: 200 191 255;
+  --c-on-secondary-container: 0 75 133;
+  --c-on-secondary-fixed: 0 28 56;
+  --c-on-error-container: 147 0 10;
+  --c-on-primary-container: 255 251 255;
+  --c-surface-container-low: 247 241 255;
+  --c-outline-variant: 201 196 211;
+  --c-on-tertiary-fixed: 58 6 34;
+  --c-secondary-fixed: 211 228 255;
+  --c-text-muted: 164 159 196;
+  --c-border-highlight: rgba(241, 239, 255, 0.28);
+  --c-surface-midnight: 19 23 40;
+  --c-surface-slate: 28 34 58;
+  --c-surface-elevated: 38 45 74;
+  --c-text-lavender: 213 208 247;
+  --c-text-alabaster: 241 239 255;
+  --c-lantern-coral: 255 141 122;
+  --c-canvas-abyss: 13 17 29;
+  --c-glow-mint: 126 232 199;
+  --c-border-subtle: rgba(213, 208, 247, 0.12);
+  --c-lantern-amber: 255 210 117;
+  --c-glow-violet: 157 141 241;
+}
+.dark {
+  --c-on-tertiary: 64 45 0;
+  --c-surface-container: 27 31 48;
+  --c-inverse-primary: 94 84 160;
+  --c-on-secondary: 0 53 68;
+  --c-surface-dim: 14 18 35;
+  --c-tertiary-container: 215 173 84;
+  --c-on-error: 105 0 5;
+  --c-tertiary-fixed-dim: 236 192 101;
+  --c-error-container: 147 0 10;
+  --c-on-primary-fixed: 26 8 89;
+  --c-error: 255 180 171;
+  --c-surface-container-high: 37 41 59;
+  --c-on-surface: 222 225 249;
+  --c-primary-fixed: 229 222 255;
+  --c-primary: 208 200 255;
+  --c-primary-container: 180 169 252;
+  --c-inverse-surface: 222 225 249;
+  --c-background: 14 18 35;
+  --c-secondary-container: 0 113 142;
+  --c-on-secondary-fixed-variant: 0 77 98;
+  --c-surface-variant: 48 52 70;
+  --c-tertiary-fixed: 255 222 161;
+  --c-on-primary: 47 36 110;
+  --c-tertiary: 245 200 109;
+  --c-inverse-on-surface: 44 47 66;
+  --c-outline: 146 143 156;
+  --c-secondary-fixed-dim: 128 209 241;
+  --c-surface-tint: 200 191 255;
+  --c-surface: 14 18 35;
+  --c-on-primary-fixed-variant: 70 60 134;
+  --c-on-tertiary-fixed-variant: 92 67 0;
+  --c-on-surface-variant: 201 196 210;
+  --c-on-background: 222 225 249;
+  --c-on-tertiary-container: 90 65 0;
+  --c-surface-container-lowest: 9 13 30;
+  --c-surface-container-highest: 48 52 70;
+  --c-secondary: 128 209 241;
+  --c-surface-bright: 52 56 75;
+  --c-primary-fixed-dim: 200 191 255;
+  --c-on-secondary-container: 200 238 255;
+  --c-on-secondary-fixed: 0 31 41;
+  --c-on-error-container: 255 218 214;
+  --c-on-primary-container: 69 58 133;
+  --c-surface-container-low: 23 27 44;
+  --c-outline-variant: 72 69 80;
+  --c-on-tertiary-fixed: 38 25 0;
+  --c-secondary-fixed: 185 234 255;
+  --c-text-muted: 164 159 196;
+  --c-border-highlight: rgba(241, 239, 255, 0.28);
+  --c-surface-midnight: 19 23 40;
+  --c-surface-slate: 28 34 58;
+  --c-surface-elevated: 38 45 74;
+  --c-text-lavender: 213 208 247;
+  --c-text-alabaster: 241 239 255;
+  --c-lantern-coral: 255 141 122;
+  --c-canvas-abyss: 13 17 29;
+  --c-glow-mint: 126 232 199;
+  --c-border-subtle: rgba(213, 208, 247, 0.12);
+  --c-lantern-amber: 255 210 117;
+  --c-glow-violet: 157 141 241;
+}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#fdf8ff;}
+::-webkit-scrollbar-thumb{background:#c8bfff;border-radius:9999px;}
+::-webkit-scrollbar-thumb:hover{background:#a299d6;}
+.dark ::-webkit-scrollbar-track{background:#0e1223;}
+.dark ::-webkit-scrollbar-thumb{background:#303446;}
+.dark ::-webkit-scrollbar-thumb:hover{background:#484550;}
+
+@keyframes sakuraFall{0%{transform:translate3d(0,-60px,0);}100%{transform:translate3d(120px,105vh,0);}}
+@keyframes sakuraSway{0%{transform:rotate(0deg) rotateY(0deg) scale(.9);}50%{transform:rotate(180deg) rotateY(180deg) scale(1.1);}100%{transform:rotate(360deg) rotateY(360deg) scale(.9);}}
+.sakura-petal{position:absolute;top:-40px;pointer-events:none;animation-name:sakuraFall,sakuraSway;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;will-change:transform;}
+
+.reveal-card{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .4s ease;will-change:opacity,transform;}
+.reveal-card.revealed{opacity:1;transform:translateY(0) scale(1);}
+.reveal-card.delay-100{transition-delay:100ms;}
+.reveal-card.delay-200{transition-delay:200ms;}
+.reveal-card.delay-300{transition-delay:300ms;}
+.reveal-card.delay-400{transition-delay:400ms;}
+.reveal-card.revealed:hover{transform:translateY(-6px) scale(1.008);box-shadow:0 20px 35px -8px rgba(138,127,214,.22);}
+.dark .reveal-card.revealed:hover{box-shadow:0 20px 35px -8px rgba(0,0,0,.65),0 0 20px 2px rgba(180,169,252,.15);}
+
+/* Theme-aware hero imagery */
+.hero-image{transition:opacity .6s ease,transform 1s ease;}
+.dark-hero-image{position:absolute;inset:0;opacity:0;}
+.dark .light-hero-image{opacity:0;}
+.dark .dark-hero-image{opacity:1;}
+
+/* Dark-mode quick navigation dock */
+.icon-rail{display:none;}
+@media (min-width:1024px){.dark .icon-rail{display:flex;}}
+.dark .theme-dot{display:none!important;}
+
+/* Dark-mode hero accent tuning */
+.dark .hero-badge{background:rgba(30,27,75,.7);color:#c7d2fe;border-color:rgba(180,169,252,.3);box-shadow:0 0 20px rgba(180,169,252,.2);}
+.dark .hero-badge .material-symbols-outlined{color:#b4a9fc;}
+.dark .hero-primary-btn{background:linear-gradient(90deg,#4f46e5,#7c3aed);border-color:rgba(255,255,255,.2);color:#fff;box-shadow:0 6px 28px rgba(99,102,241,.5);}
+.dark .hero-secondary-btn{background:rgba(19,23,40,.8);border-color:rgba(255,255,255,.2);color:#e2e8f0;}
+.dark .hero-banner{background:rgba(20,24,45,.85);border-color:rgba(255,255,255,.1);color:#cbd5e1;}
+
+/* Dark-mode footer */
+.dark footer{background:#0a0d1a;border-color:rgba(255,255,255,.1);}
+.dark footer p,.dark footer a{color:#94a3b8;}
+
+@media (prefers-reduced-motion:reduce){
+  .sakura-petal{animation:none!important;display:none!important;}
+  .reveal-card{opacity:1!important;transform:none!important;transition:none!important;}
+}
+  </style>
 </head>
-<body>
-<header>
-  <div class="brand">
-    <a href="#home" class="brand-link">
-      <img id="logo" src="images/logo.png" alt="logo" />
-      <span class="brand-name">wme</span>
-    </a>
-  </div>
 
-  <!-- Hamburger menu for mobile -->
-  <div class="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<main class="w-full bg-background"><div class="flex flex-col w-full relative overflow-hidden">
+<!-- Floating Atmosphere Ambient Orbs (Pastel Ghibli clouds/aurora aesthetic) -->
+<div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-r from-primary-fixed/45 via-secondary-fixed/50 to-tertiary-fixed/35 rounded-full blur-3xl opacity-80"></div>
+<div class="pointer-events-none absolute top-[950px] -left-32 w-[550px] h-[550px] bg-secondary-fixed-dim/25 rounded-full blur-3xl"></div>
+<div class="pointer-events-none absolute top-[2100px] -right-32 w-[650px] h-[650px] bg-tertiary-fixed/30 rounded-full blur-3xl"></div>
+<div class="pointer-events-none absolute top-[3200px] left-1/4 w-[700px] h-[500px] bg-primary-fixed/25 rounded-full blur-3xl"></div>
+<!-- HERO SECTION (Studio Ghibli Night Train Aesthetic) -->
+<section class="relative w-full min-h-screen flex flex-col justify-between overflow-hidden border-b border-surface-container-high/40 bg-slate-950">
+<!-- Full-bleed Scenic Ghibli Background Image using DATA:IMAGE:IMAGE_2 -->
+<div class="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
+<img alt="Studio Ghibli magical night train under twilight sky with sakura blossoms" class="hero-image light-hero-image w-full h-full object-cover object-center scale-[1.01] transform transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCpo8sEVMIK8KmXI4jekf_Qz1DqdRcUWm-PrfTeu3C7-w-cgxM9h3i9Nj8zSpWY8Z3b_VLZYp8hGuX2MSHx8nrkDSNf3OP5WRqxylTwDdGOebZEFUcdYYNguQJjLYlf02cPZ3HVf6gQEl8cvUoKO6KfKJDQv3D14gs2-lm0Ug4BFGEH8gsIG3O6thChgvNZ-uwphAeydbaGBxhj94yYp89d3-qPZ_6gjNv0ngGB8H7TS7YSvAb31rPEw" style="filter: brightness(1.22) contrast(1.08) saturate(1.25);">
+<img alt="Studio Ghibli magical night train under twilight sky with sakura blossoms" class="hero-image dark-hero-image w-full h-full object-cover object-center scale-[1.01]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0g05wpLZ6UN7EVZEaD1fvxmPIZYVxoBJZTRhbrMPIlmSN79dg8NyOuZdF6Xl3TTGm61IpKj10zpaZuzOrFA6x6eQ8eVwdfArk-KzM7aY5NoC60R00iBYecuSyEePTSwr0GFkDYGLD7D88qATLlPh5s-r2PhSpsTyjre-dwxwB3vzGYFD8sJ3ZCmXr4H417yzuHysVIoxj1hV7bGRb70KryHKfs4pOupHSCuDAsItbUXv_SuXnZva80Q" style="filter: brightness(0.95) contrast(1.1) saturate(1.15);">
+<!-- Atmospheric Twilight Gradient Overlays for Readability -->
+<div class="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-[1]" aria-hidden="true">
+  <svg class="sakura-petal" style="left: 6%; width: 16px; height: 16px; opacity: 0.75; animation-duration: 9.5s, 3.2s; animation-delay: -2s, -0.5s; fill: #ffccd5; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.3));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 14%; width: 20px; height: 20px; opacity: 0.85; animation-duration: 12s, 4s; animation-delay: -7s, -1.2s; fill: #ffb7c5; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.35));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 22%; width: 13px; height: 13px; opacity: 0.6; animation-duration: 14.5s, 3.6s; animation-delay: -11s, -2.1s; fill: #f8c8dc; filter: drop-shadow(0 1px 3px rgba(255,182,193,0.25));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 31%; width: 18px; height: 18px; opacity: 0.8; animation-duration: 10.5s, 3.8s; animation-delay: -4s, -0.8s; fill: #fce4ec; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.3));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 39%; width: 14px; height: 14px; opacity: 0.65; animation-duration: 13s, 4.4s; animation-delay: -9s, -1.8s; fill: #ffccd5; filter: drop-shadow(0 1px 3px rgba(255,182,193,0.25));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 48%; width: 22px; height: 22px; opacity: 0.75; animation-duration: 11.2s, 3.5s; animation-delay: -1.5s, -0.4s; fill: #ffb7c5; filter: drop-shadow(0 2px 5px rgba(255,182,193,0.35));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 56%; width: 15px; height: 15px; opacity: 0.7; animation-duration: 15s, 4.8s; animation-delay: -13s, -2.6s; fill: #f8c8dc; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.25));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 63%; width: 19px; height: 19px; opacity: 0.8; animation-duration: 10s, 3.1s; animation-delay: -5.5s, -1.1s; fill: #fce4ec; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.3));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 71%; width: 12px; height: 12px; opacity: 0.55; animation-duration: 16s, 4.2s; animation-delay: -8s, -1.5s; fill: #ffccd5; filter: drop-shadow(0 1px 3px rgba(255,182,193,0.2));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 79%; width: 17px; height: 17px; opacity: 0.78; animation-duration: 11.8s, 3.7s; animation-delay: -3s, -0.6s; fill: #ffb7c5; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.3));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 87%; width: 21px; height: 21px; opacity: 0.82; animation-duration: 13.5s, 4.6s; animation-delay: -10.5s, -2.3s; fill: #f8c8dc; filter: drop-shadow(0 2px 5px rgba(255,182,193,0.35));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 94%; width: 15px; height: 15px; opacity: 0.68; animation-duration: 12.4s, 3.9s; animation-delay: -6.2s, -1.4s; fill: #fce4ec; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.25));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 18%; width: 16px; height: 16px; opacity: 0.7; animation-duration: 14s, 3.4s; animation-delay: -12.5s, -2.8s; fill: #ffccd5; filter: drop-shadow(0 1px 3px rgba(255,182,193,0.25));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 44%; width: 18px; height: 18px; opacity: 0.76; animation-duration: 10.8s, 4.1s; animation-delay: -4.8s, -0.9s; fill: #ffb7c5; filter: drop-shadow(0 2px 4px rgba(255,182,193,0.3));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+  <svg class="sakura-petal" style="left: 75%; width: 13px; height: 13px; opacity: 0.62; animation-duration: 15.5s, 3.5s; animation-delay: -14.2s, -1.7s; fill: #fce4ec; filter: drop-shadow(0 1px 3px rgba(255,182,193,0.2));" viewBox="0 0 30 30"><path d="M15,1 C18,7 27,9 25,18 C23,26 16,28 15,29 C14,28 7,26 5,18 C3,9 12,7 15,1 Z"></path></svg>
+</div><div class="absolute inset-0 bg-gradient-to-t from-[#120f2e]/60 via-[#1c1942]/25 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0d0f22]/50 via-transparent to-[#100d28]/35 pointer-events-none"></div>
+<div class="absolute inset-0 backdrop-blur-[0.5px]"></div>
+</div>
+<!-- Hero Content Layer -->
+<div class="relative z-10 w-full max-w-[1240px] mx-auto px-margin py-8 lg:py-12 flex-1 flex flex-col justify-between">
+<!-- Top row status / quick actions (NO top navigation tabs, theme toggle & social capsules only) -->
+<div class="flex justify-end items-center gap-4 font-label-md text-label-md text-white/90 font-semibold">
+<div class="flex items-center gap-2">
+<a class="w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white/90 hover:text-white border border-white/20 shadow-lg backdrop-blur-md flex items-center justify-center transition-all hover:scale-105" href="https://github.com/sky1rk" rel="noreferrer" target="_blank" title="GitHub">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</a>
+<a class="w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white/90 hover:text-white border border-white/20 shadow-lg backdrop-blur-md flex items-center justify-center transition-all hover:scale-105" href="mailto:wilfame.esponilla@wvsu.edu.ph" title="Send Email">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<button aria-label="Toggle Theme" class="w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-pink-200 hover:text-white border border-white/20 shadow-lg backdrop-blur-md flex items-center justify-center transition-all hover:scale-105 active:scale-95" id="themeToggleBtn" title="Toggle Theme">
+<span class="material-symbols-outlined text-[18px]" id="themeToggleIcon">dark_mode</span>
+</button>
+</div>
+<!-- Main hero grid with Antonio Vega layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 items-center gap-space-lg my-auto py-8 lg:py-14">
+<div class="lg:col-span-9 flex flex-col items-start gap-6">
+<div class="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-md text-pink-200 font-label-sm text-label-sm border border-pink-300/30 shadow-[0_0_15px_rgba(255,176,207,0.25)]">
+<span class="material-symbols-outlined text-[16px] text-pink-300 animate-pulse">spa</span>
+<span class="tracking-wide">Crafting practical solutions &amp; intelligent systems</span>
+</div>
+<h1 class="font-display text-display text-[52px] sm:text-[76px] lg:text-[98px] text-white tracking-tight leading-[0.92] uppercase font-bold drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+<span class="block text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">WILFAME</span>
+<span class="block text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-primary-fixed-dim to-secondary-fixed drop-shadow-[0_4px_12px_rgba(91,80,164,0.5)]">ESPONILLA</span>
+</h1>
+<p class="font-body-lg text-body-lg text-slate-100/95 max-w-xl leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
+          Welcome to my digital space, where concepts come alive as interactive creations. BSCS Student &amp; Software Developer at West Visayas State University.
+        </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-2">
+<a class="hero-primary-btn px-space-lg py-3 rounded-full border-2 border-primary-container bg-primary/95 text-white hover:bg-primary hover:border-primary-fixed font-label-md text-label-md tracking-wider uppercase font-semibold transition-all flex items-center gap-2 shadow-[0_6px_24px_rgba(91,80,164,0.45)] hover:scale-[1.02] backdrop-blur-sm" href="#creations">
+<span>EXPLORE CREATIONS</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="hero-secondary-btn px-space-md py-3 rounded-full bg-slate-900/60 backdrop-blur-md border border-white/25 text-white hover:text-pink-200 hover:bg-slate-900/80 font-label-md text-label-md uppercase tracking-wider font-semibold transition-all flex items-center gap-1.5 shadow-[0_4px_16px_rgba(0,0,0,0.2)]" download="Wilfame_Esponilla_CV.pdf" href="mailto:wilfame.esponilla@wvsu.edu.ph?subject=Resume%20Request%20-%20Wilfame%20Esponilla">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>DOWNLOAD CV</span>
+</a>
+</div>
+</div>
+<!-- Vertical right-hand navigation list -->
+<nav class="lg:col-span-3 flex flex-row lg:flex-col items-start lg:items-end justify-start lg:justify-center flex-wrap gap-4 lg:gap-6 font-headline-sm text-headline-sm text-slate-200 font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#about"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>About</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#skills"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Skills</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#creations"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Creations</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#education"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Education</a>
+<a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#contact"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Contact</a>
+</nav>
+</div>
 
-  <!-- Center navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Right side social links -->
-  <div class="links">
-  <a href="https://www.instagram.com/sky.lrk_/" target="_blank">
-    <i class="fab fa-instagram"></i>
+<!-- Theme-aware quick navigation dock (dark mode) -->
+<div class="icon-rail fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col gap-2.5 p-2 rounded-2xl bg-[#14182d]/90 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#hero" title="Home">
+    <span class="material-symbols-outlined text-[20px]">home</span>
+    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Home</span>
   </a>
-  <a href="https://www.facebook.com/wilfame.esponilla.12" target="_blank">
-    <i class="fab fa-facebook"></i>
+  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#about" title="About &amp; Skills">
+    <span class="material-symbols-outlined text-[20px]">person</span>
+    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">About &amp; Skills</span>
+  </a>
+  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#creations" title="Creations">
+    <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Creations</span>
+  </a>
+  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#education" title="Education">
+    <span class="material-symbols-outlined text-[20px]">school</span>
+    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Education</span>
+  </a>
+  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#contact" title="Contact">
+    <span class="material-symbols-outlined text-[20px]">mail</span>
+    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Contact</span>
   </a>
 </div>
-</header>
 
-
-  <main>
-    <section id="home">
-        <div class="wrapper">
-        <!-- Left side text -->
-        <div class="cols cols0">
-            <span class="topline">Hello_ </span>
-            <h1>I'm <span class="multitext"></span></h1>
-            <p>
-                Welcome to my digital space, where concepts come alive as interactive creations.
-            </p>
-            <div class="btns">
-                <a href="resume.pdf" target="_blank" class="cv-btn">Download CV</a>
-            </div>
-        </div>
-
-        <!-- Right side image -->
-        <div class="cols cols1">
-            <div class="imgbox">
-            <img src="images/home.png" alt="Wilfame Esponilla" class="home-image" />
-            </div>
-        </div>
-        </div>
-        <!-- Floating hobby elements -->
-      <img src="images/float1.png" class="float-element hobby1" alt="Game Icon">
-      <img src="images/float2.png" class="float-element hobby2" alt="Game Icon">
-      <img src="images/float3.png" class="float-element hobby3" alt="Game Icon">
-      <img src="images/float4.png" class="float-element hobby4" alt="Game Icon">
-      <img src="images/float4.png" class="float-element hobby5" alt="Game Icon">
-      <img src="images/float6.png" class="float-element hobby6" alt="Game Icon">
-      <img src="images/float7.png" class="float-element hobby7" alt="Game Icon">
-    </section>
-
-    <section id="about">
-      <div class="about-container">
-        <img src="images/aboutme.png" alt="Wilfame Esponilla" class="about-image">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            I am a 3rd-year BS Computer Science student at West Visayas State University with a strong interest in game development and digital editing.
-            My academic background has provided me with a solid foundation in programming and problem-solving,
-            while my passion for creative design drives me to explore the intersection of technology and storytelling.
-            I aspire to contribute to the game development industry by creating engaging, interactive experiences.
-            In my free time, I enjoy watching dramas and listening to music,
-            which often inspire new perspectives and ideas for my work.
+<!-- Whimsical banner strip with frosted glass backdrop -->
+<div class="hero-banner flex flex-wrap items-center justify-between gap-3 py-3 px-5 rounded-2xl bg-slate-900/65 backdrop-blur-md border border-white/15 text-slate-200 font-label-sm text-label-sm shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-pink-300 text-[16px]">location_on</span>Miagao, Iloilo, Philippines</span>
+<span class="hidden md:inline text-white/80">West Visayas State University • Artificial Intelligence Major</span>
+<span class="flex items-center gap-1.5 text-pink-200 font-semibold"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Software Developer</span>
+</div>
+</div>
+</section>
+<!-- 1. ABOUT ME & CORE SKILLS SECTION (#about / #skills) -->
+<section class="w-full max-w-[1240px] mx-auto px-margin py-20" id="about">
+<div class="rounded-3xl bg-surface-container-low p-7 sm:p-10 lg:p-14 shadow-[0_8px_32px_-4px_rgba(138,127,214,0.12)] border border-surface-container-high/70 relative overflow-hidden">
+<!-- Decorative Ghibli Botanical Vector -->
+<div class="absolute -top-6 -right-6 p-8 text-primary-fixed-dim/30 pointer-events-none select-none">
+<span class="material-symbols-outlined text-[160px]">filter_vintage</span>
+</div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-space-lg">
+<div class="flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-md text-label-md w-fit font-semibold">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Passionate software developer</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+          About Me
+        </h2>
+</div>
+<!-- Verbatim High-level Bio -->
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-justify sm:text-left">
+        Fourth-year Computer Science student majoring in Artificial Intelligence at West Visayas State University (WVSU), with hands-on experience developing cross-platform mobile applications, Python-based web systems, and interactive 2D games. Skilled in frontend and backend development, and predictive machine learning integration. Seeking a Software Development internship to contribute to web, mobile, and AI-driven software solutions.
+      </p>
+<!-- SKILLS TOOLBELT SECTION (#skills) -->
+<div class="pt-6 border-t border-surface-container-high/80 flex flex-col gap-6" id="skills">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">auto_awesome</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold uppercase tracking-wider">
+            Technical Toolbelt &amp; Core Skills
+          </h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Programming Languages (Excluding TypeScript as requested) -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">code</span>
+<span>Programming Languages</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Python</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Dart</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Java</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">SQL</span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">GDScript</span>
+</div>
+</div>
+<!-- Web & Backend -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-secondary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+<span>Web &amp; Backend</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">HTML5</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">CSS3</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Flask</span>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">REST APIs</span>
+</div>
+</div>
+<!-- Mobile & Game Development -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-tertiary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">sports_esports</span>
+<span>Mobile &amp; Game Development</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Flutter</span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Godot Engine 4.x</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Cross-Platform</span>
+</div>
+</div>
+<!-- AI & Developer Tools -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm flex flex-col gap-2.5 lg:col-span-2">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span>AI, Machine Learning &amp; Developer Tools</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Machine Learning / AI</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">VS Code</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Git</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">GitHub</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">Google Colab</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">Jupyter Notebook</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">Kaggle</span>
+</div>
+</div>
+<!-- Competencies -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-secondary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">diversity_3</span>
+<span>Competencies</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Time Management</span>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Communication Skills</span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Team Collaboration</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. FEATURED CREATIONS / PROJECTS SECTION (#creations) -->
+<section class="w-full max-w-[1240px] mx-auto px-margin py-16" id="creations">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm w-fit font-semibold">
+<span class="material-symbols-outlined text-[14px]">token</span>
+<span>Works &amp; projects</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+        Featured Creations
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+        A curated showcase of cultural narrative games, biometric verification platforms, clinical machine learning models, and gamified apps.
+      </p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span>4 Selected Works</span>
+</div>
+</div>
+<!-- Bento Grid Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Project 1: Kalye Corazón (Span 12 - Hero Card with DATA:IMAGE:IMAGE_8) -->
+<div class="group md:col-span-12 rounded-3xl bg-surface-container-lowest p-6 lg:p-8 shadow-[0_6px_28px_-2px_rgba(138,127,214,0.14)] hover:shadow-[0_16px_36px_-4px_rgba(91,80,164,0.2)] transition-all duration-300 border border-primary/20 reveal-card delay-100">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-7 relative h-72 lg:h-96 rounded-2xl overflow-hidden bg-surface-container-high shadow-inner border border-surface-container-high reveal-card delay-100">
+<img alt="Kalye Corazón game visual preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDocq78p5JvuGaklEN0f4AaCmoV7Mxq8XDZcvIzB__TE40RFKIi_m0CjEf6mk9feQVIBAmySjYAjTjsCyvjtFECpEME6Ps5cCIENEwkAPzBwWlWGfs0d1o8xhERVeh6Ml-2-lDgsCo7rnLaqRKM_L3oczurCwqtYADrKJU0cmkxnx5lLfNvpnM2nG8GTImhjroYKu1Gfw6gKYraw3MLmahEKJDWII32BOCDpbJ0BoIHyIUsJeQOHBQwsw">
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary/90 text-on-tertiary font-label-sm text-label-sm backdrop-blur-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sports_esports</span>
+<span>2D Cultural Adventure</span>
+</div>
+<div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-surface-container-lowest/95 text-tertiary font-label-sm text-label-sm flex items-center gap-1.5 shadow font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Sept. 2025 – Aug. 2026</span>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-between h-full gap-5 reveal-card delay-200">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase tracking-wider">Side Project • Godot Engine 4.x &amp; GDScript</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold group-hover:text-tertiary transition-colors">
+              Kalye Corazón
+            </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2.5 leading-relaxed">
+              A narrative-driven cultural adventure game inspired by the rich heritage of Western Visayas. Built using Godot Engine, it follows Caleb, an Ilonggo student, as he journeys through historic landmarks and cultural communities to recover lost Heritage Artifacts. Discover the stories, traditions, and identity of a region frozen in time.Step onto the Kalye, find your Corazón.</p>
+</div>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Godot 4.x</span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">GDScript</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Dialogue Manager</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Western Visayas Lore</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a class="py-3 px-6 rounded-full bg-tertiary text-on-tertiary hover:bg-tertiary-container font-label-md text-label-md transition-all flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(136,71,100,0.25)] hover:scale-[1.02]" href="https://github.com/sky1rk" rel="noreferrer" target="_blank">
+<span>Explore Game &amp; Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 4: VERIFYX (Span 6 - Live Platform) -->
+<div class="group md:col-span-6 flex flex-col rounded-3xl bg-surface-container-lowest p-6 lg:p-7 shadow-[0_4px_24px_-2px_rgba(138,127,214,0.12)] hover:shadow-[0_16px_36px_-4px_rgba(91,80,164,0.2)] transition-all duration-300 border border-surface-container-high/60 justify-between reveal-card delay-200">
+<div class="flex flex-col gap-4">
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-fixed/80 via-secondary-fixed/50 to-surface-container flex flex-col items-center justify-center p-4">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm mb-2 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[36px]">badge</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-primary">WVSU Attendance &amp; Exam Verification</div>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm backdrop-blur-sm shadow-sm">
+            Biometrics &amp; AI
+          </div>
+<div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm flex items-center gap-1.5 shadow font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+<span>Live Deployment</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary font-semibold mb-1 uppercase tracking-wider"><font color="#27609c">CCS 250 FINAL PROJECT</font>&nbsp;<span style="color: rgb(39, 96, 156); letter-spacing: 0.55px;">• Nov 2026</span></p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+            VERIFYX – Biometric Identity Platform
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+            Biometric &amp; Student Verification Platform for West Visayas State University automating exam verification, event credentials, and campus security with real-time facial recognition.
           </p>
-        </div>
-      </div>
+</div>
+</div>
+<div class="pt-6 flex flex-col gap-3">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Facial Biometrics</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Security</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">Python / Flask</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Vercel</span>
+</div>
+<a class="w-full py-3 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(91,80,164,0.25)] hover:scale-[1.01]" href="https://verifyx-wvsu.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span>Launch Web App</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 2: Pal.se (Span 6 - Undergraduate Thesis) -->
+<div class="group md:col-span-6 flex flex-col rounded-3xl bg-surface-container-lowest p-6 lg:p-7 shadow-[0_4px_24px_-2px_rgba(138,127,214,0.12)] hover:shadow-[0_16px_36px_-4px_rgba(91,80,164,0.2)] transition-all duration-300 border border-surface-container-high/60 justify-between reveal-card delay-300">
+<div class="flex flex-col gap-4">
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-fixed/60 via-secondary-fixed/40 to-surface-container-high flex flex-col items-center justify-center p-4">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm mb-2 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[36px]">biotech</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-primary">Clinical Decision Support</div>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary font-label-sm text-label-sm backdrop-blur-sm shadow-sm">
+            AI • Healthcare ML
+          </div>
+<div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm flex items-center gap-1.5 shadow font-semibold">
+<span class="material-symbols-outlined text-[15px]">school</span>
+<span>Jan 2026 – Present</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary font-semibold mb-1 uppercase tracking-wider">Undergraduate Thesis • Jan 2026 - Present</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+            Pal.se: Neonatal Sepsis Risk Prediction
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+            Clinical decision support web app designed to predict and assess the risk of Early-Onset Neonatal Sepsis (EOS) using clinical parameters, integrating XGBoost and Temporal Fusion Transformer (TFT) residual ensemble. Built with Flask.
+          </p>
+</div>
+</div>
+<div class="pt-6 flex flex-col gap-3">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Flask</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">XGBoost</span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">TFT Ensemble</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Clinical AI</span>
+</div>
+<div class="w-full"><a class="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 shadow-sm text-center" href="https://github.com/sky1rk" rel="noreferrer" target="_blank"><span>Launch Web App</span><span class="material-symbols-outlined text-[15px]">arrow_outward</span></a></div>
+</div>
+</div>
+<!-- Project 3: Notiva (Span 12 - Mobile App) -->
+<div class="group md:col-span-12 rounded-3xl bg-surface-container-lowest p-6 lg:p-7 shadow-[0_4px_24px_-2px_rgba(138,127,214,0.12)] hover:shadow-[0_16px_36px_-4px_rgba(91,80,164,0.2)] transition-all duration-300 border border-secondary-fixed/50 reveal-card delay-400">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-4 relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-gradient-to-br from-secondary-fixed/60 via-primary-fixed/30 to-surface-container-high flex flex-col items-center justify-center p-4 reveal-card delay-100">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm mb-2 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[36px]">sports_martial_arts</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Turn Your Tasks into Adventures</span>
+<div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary/90 text-on-secondary font-label-sm text-label-sm backdrop-blur-sm shadow-sm">
+            Mobile • RPG Gamified
+          </div>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/90 text-secondary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col justify-between gap-4 reveal-card delay-200">
+<div>
+<p class="font-label-sm text-label-sm text-secondary font-semibold mb-1 uppercase tracking-wider">CC 206 Final Project • Nov 2025</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">
+              Notiva – Gamified Adventure Task Manager
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              An interactive Android productivity app turning task management into RPG-style adventures. Earn rewards as you complete quests, tracking your journey and accomplishments. Built with Flutter, Dart, and REST API sync.
+            </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Flutter</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Dart</span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Gamification</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">REST API</span>
+</div>
+<a class="py-2.5 px-5 rounded-xl bg-surface-container-low hover:bg-secondary hover:text-on-secondary text-on-surface font-label-md text-label-md transition-all flex items-center justify-center gap-1.5 border border-surface-container-high/60" href="https://github.com/sky1rk" rel="noreferrer" target="_blank">
+<span>GitHub Repo</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. ACHIEVEMENTS & EDUCATION SECTION (#education) -->
+<section class="w-full max-w-[1240px] mx-auto px-margin py-16" id="education">
+<div class="flex flex-col gap-2 mb-space-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm w-fit font-semibold">
+<span class="material-symbols-outlined text-[15px]">school</span>
+<span>Background &amp; Honors</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+      Education &amp; Key Achievements
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+      Academic milestones at West Visayas State University, national hackathon recognitions, and university leadership roles.
+    </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Education & Leadership (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="rounded-3xl bg-surface-container-lowest p-7 shadow-[0_4px_24px_-2px_rgba(138,127,214,0.1)] border border-surface-container-high/70 flex flex-col gap-5">
+<div class="flex items-center gap-3 text-primary">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">school</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Education</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formal Academic Degree</p>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-surface-container-low border border-surface-container-high/50 flex flex-col gap-3">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-title-md text-title-md text-primary font-bold">West Visayas State University</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">2023 – Expected June 2027</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">
+            B.S. in Computer Science, Major in Artificial Intelligence
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            La Paz, Iloilo City, Philippines
+          </p>
+<div class="pt-3 border-t border-surface-container-high/60 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Academic Honors</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500 text-[18px]">workspace_premium</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Gold Academic Awardee (2025–2026)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">military_tech</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Silver Academic Awardee (2023–2025)</span>
+</div>
+</div>
+<!-- Relevant Coursework -->
+<div class="pt-3 border-t border-surface-container-high/60 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Relevant Coursework</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Software Engineering</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Applications Development &amp; Emerging Tech</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Artificial Intelligence</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Object-Oriented Programming</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Web Design &amp; Development</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Human-Computer Interaction</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">Computer Vision</span>
+</div>
+</div>
+</div>
+<!-- Leadership Card -->
+<div class="p-5 rounded-2xl bg-surface-container-low border border-surface-container-high/50 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-tertiary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">diversity_3</span>
+<span>Leadership Experience</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Aug 2026 – Present</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">
+            West Visayas State University Artist Guild
+          </p>
+<p class="font-body-sm text-body-sm text-tertiary font-semibold">
+            Assistant Auditor
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Conducted financial audits, prepared event budgets, and optimized resource allocation for university-wide arts and cultural exhibitions.
+          </p>
+</div>
+</div>
+</div>
+<!-- Achievements & Competitions Card (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<div class="rounded-3xl bg-surface-container-lowest p-7 shadow-[0_4px_24px_-2px_rgba(138,127,214,0.1)] border border-surface-container-high/70 flex flex-col gap-5 h-full">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-secondary">
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">emoji_events</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Key Achievements &amp; Honors</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Competitions, Hackathons &amp; Eligibility</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Validated</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Achievement 1 -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3.5 border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">trophy</span>
+</div>
+<div class="flex-1"><div class="flex items-center justify-between flex-wrap gap-1"><span class="font-title-md text-title-md text-on-surface font-semibold">Top 5 Finalist — AIFest 2026: AI in Motion</span><span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold">2026</span></div><p class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Associate Project Developer</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">Recognized among top regional teams for <span class="font-semibold text-on-surface">RESQ PH.</span></p></div>
+</div>
+<!-- Achievement 2 -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3.5 border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">sports_esports</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Top 10 Finalist — AIFest 2026: AI Game On</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">2026</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary font-medium mt-0.5">Lead Game Developer</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Recognized as one of the top national teams for our game Kalye Corazon.</p>
+</div>
+</div>
+<!-- Achievement 3 -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3.5 border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">stars</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Best Visual Presentation — Game On 2025</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">COO and Associate Game Developer</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Honored for exceptional visual storytelling, and artistic direction.</p>
+</div>
+</div>
+<!-- Achievement 4 -->
+<div class="p-4 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start gap-3.5 border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Top 10 Finalist — AIFest 2025: SineAI</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-semibold">2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">Short Film Editor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Curated narrative pacing, visual effects, and AI multimedia pipeline integration.</p>
+</div>
+</div>
+<!-- Achievement 5 (Civil Service) -->
+<div class="p-4 rounded-2xl bg-gradient-to-r from-primary-fixed/40 via-surface-container-low to-surface-container-low flex items-start gap-3.5 border border-primary-fixed">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<span class="font-title-md text-title-md text-on-surface font-bold">Civil Service Professional Level Passer</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-semibold">Aug 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-medium mt-0.5">Civil Service Commission (CSC)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Conferred Career Service Professional Eligibility for Philippine civil service appointments.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. CONTACT / GET IN TOUCH SECTION (#contact) -->
+<section class="w-full max-w-[1240px] mx-auto px-margin py-20 lg:py-24" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Contact Info & Warm Invitation -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm w-fit font-semibold">
+<span class="material-symbols-outlined text-[16px]">local_post_office</span>
+<span>&nbsp;Mailbox</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">
+          Get in Touch
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          I'm always open to discussing new software projects, collaborative game concepts, or software development internship opportunities. Whether you have a question, feedback, or just want to say hello, feel free to send a message and I'll get back to you as soon as possible!
+        </p>
+<!-- Direct Contact Info Badges (Verbatim details from resume) -->
+<div class="flex flex-col gap-2.5 pt-2">
+<!-- Email -->
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline font-semibold uppercase">Email Address</p>
+<a class="font-body-sm text-body-sm text-primary font-semibold hover:underline" href="mailto:wilfame.esponilla@wvsu.edu.ph">wilfame.esponilla@wvsu.edu.ph</a>
+</div>
+</div>
+<!-- Location -->
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm">
+<div class="w-9 h-9 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline font-semibold uppercase">Location</p>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Brgy. Bagumbayan, Miagao, Iloilo</p>
+</div>
+</div>
+<!-- Phone -->
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-sm">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline font-semibold uppercase">Phone</p>
+<a class="font-body-sm text-body-sm text-on-surface font-semibold hover:text-primary transition-colors" href="tel:09306486957">09306486957</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Connect Capsules -->
+<div class="flex flex-col gap-2.5 pt-2">
+<p class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">Find my digital traces</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+<a class="p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-all shadow-sm flex items-center gap-2.5 border border-surface-container-high/60 group" href="https://github.com/sky1rk" rel="noreferrer" target="_blank">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-sm text-label-sm text-on-surface font-bold">GitHub</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">@sky1rk</p>
+</div>
+</a>
+<a class="p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-all shadow-sm flex items-center gap-2.5 border border-surface-container-high/60 group" href="https://www.instagram.com/sky.lrk_/" rel="noreferrer" target="_blank">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-sm text-label-sm text-on-surface font-bold">Instagram</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">@sky.lrk_</p>
+</div>
+</a>
+<a class="p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-high transition-all shadow-sm flex items-center gap-2.5 border border-surface-container-high/60 group" href="https://www.facebook.com/wilfame.esponilla.12" rel="noreferrer" target="_blank">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-sm text-label-sm text-on-surface font-bold">Facebook</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">wilfame.esponilla.12</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Cozy Ghibli Postcard/Letter Form -->
+<div class="lg:col-span-7">
+<div class="rounded-3xl bg-surface-container-lowest p-6 sm:p-8 lg:p-10 shadow-[0_12px_36px_-6px_rgba(138,127,214,0.16)] border border-surface-container-high/80 relative">
+<div class="flex items-center justify-between pb-6 mb-6 border-b border-surface-container-high/60">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-error-container"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-secondary-fixed"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2 font-semibold">mailbox.exe</span>
+</div>
+<div class="flex items-center gap-1.5 text-primary font-semibold font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+<span>Send A Note</span>
+</div>
+</div>
+<form class="flex flex-col gap-space-md" id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Name Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="userName">
+<span class="material-symbols-outlined text-[16px] text-primary">person</span>
+              Name:
+            </label>
+<input class="w-full px-4 py-3 rounded-2xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 border border-transparent focus:border-primary/30 transition-all" id="userName" placeholder="What should I call you?" required="" type="text">
+</div>
+<!-- Email Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="userEmail">
+<span class="material-symbols-outlined text-[16px] text-secondary">alternate_email</span>
+              Email:
+            </label>
+<input class="w-full px-4 py-3 rounded-2xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/40 border border-transparent focus:border-secondary/30 transition-all" id="userEmail" placeholder="your.name@domain.com" required="" type="email">
+</div>
+<!-- Message Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5" for="userMessage">
+<span class="material-symbols-outlined text-[16px] text-tertiary">edit_note</span>
+              Message:
+            </label>
+<textarea class="w-full px-4 py-3 rounded-2xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline/70 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-tertiary/40 border border-transparent focus:border-tertiary/30 transition-all resize-none" id="userMessage" placeholder="Share your game ideas, collaboration proposals, or internship inquiries..." required="" rows="4"></textarea>
+</div>
+<!-- Form Actions -->
+<div class="flex items-center justify-between gap-space-sm pt-2">
+<button class="px-5 py-2.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center gap-1.5" type="reset">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+              Clear
+            </button>
+<button class="px-space-lg py-3 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-[0_6px_20px_rgba(91,80,164,0.25)] transition-all flex items-center gap-2 transform hover:-translate-y-0.5" id="submitBtn" type="submit">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+<span>Send Message</span>
+</button>
+</div>
+<!-- Notification Toast -->
+<div class="hidden p-3.5 rounded-2xl bg-primary-fixed text-on-primary-fixed font-body-sm text-body-sm flex items-center gap-2 shadow-sm" id="formSuccessToast">
+<span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+<span>Thank you! Your note has flown softly to my inbox. I will reply soon.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Form & Theme -->
 
-      <!-- Floating hobby elements -->
-      <img src="images/float1.png" class="float-element hobby8" alt="Game Icon">
-      <img src="images/float7.png" class="float-element hobby9" alt="Game Icon">
-      <img src="images/float4.png" class="float-element hobby10" alt="Game Icon">
-      <img src="images/float3.png" class="float-element hobby11" alt="Game Icon">
-    </section>
+</div></main>
+<!-- WHIMSICAL GHIBLI FOOTER -->
+<footer class="w-full bg-surface-container-low border-t border-surface-container-high/60 mt-space-xl"><div class="max-w-[1240px] mx-auto px-margin py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"><p class="text-on-surface-variant font-medium font-body-sm text-body-sm tracking-wide">© 2026 Wilfame Esponilla. All rights reserved.</p><a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-semibold font-label-sm text-label-sm transition-colors py-1 px-3 rounded-full hover:bg-surface-container" href="#"><span class="material-symbols-outlined text-[16px]">arrow_upward</span><span>Back to top</span></a></div></footer>
 
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <div class="slider">
-        <div class="slide">
-          <img src="images/15.png" alt="Project 1">
-          <p class="description">AlgoRhythm — Inspired by Friday Night Funkin’, the game combines fast-paced music gameplay with intelligent algorithm-driven system.</p>
-        </div>
-        <div class="slide">
-          <img src="images/13.png" alt="Project 2">
-          <p class="description">Ginbugkos ngA TIngting — Despite his father's lack of interest in education, a young "ati" boy is adamant to be educated.</p>
-        </div>
-        <div class="slide">
-          <img src="images/12.png" alt="Project 3">
-          <p class="description">ShelfSync — A library resource discovery system designed to simplify and enhance the search process for users.</p>
-        </div>
-        <div class="slide">
-          <img src="images/14.png" alt="Project 4">
-          <p class="description">Panublion sang Walay Palad — As the boundary between the living and the unseen begins to break, Amarra is forced to confront an inheritance that could be a salvation or a curse.</p>
-        </div>
-        <div class="slide">
-          <img src="images/11.png" alt="Project 5">
-          <p class="description">17Beat — A simple rhythm game featuring the songs of the K-pop group SEVENTEEN.</p>
-        </div>
+<script>
+  function handleFormSubmit() {
+    const btn = document.getElementById('submitBtn');
+    const toast = document.getElementById('formSuccessToast');
+    const form = document.getElementById('contactForm');
+    if (!btn || !toast || !form) return;
 
-        <!-- Slider controls -->
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Sending...</span>';
 
-    <!-- Contact Section -->
-   <section id="contact">
-    <!-- Right side: Header above image -->
-      <div class="contact-image">
-        <h2>Contact Me</h2>
-        <a href="https://github.com/sky1rk" target="_blank">
-          <img src="images/contact.png" alt="Contact Image">
-        </a>
-      </div>
-      <!-- Left side: Form -->
-      <div class="contact-form">
-       <form id ="contact-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">flight_takeoff</span><span>Send Message</span>';
+      toast.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => toast.classList.add('hidden'), 5000);
+    }, 700);
+  }
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.toggle('dark');
+    html.style.colorScheme = isDark ? 'dark' : 'light';
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+    const icon = document.getElementById('themeToggleIcon');
+    if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+    syncThemeMeta();
 
-          <input type="submit" value="Send">
-          <input type="reset" value="Clear">
-        </form>
-      </div>
-    </section>
+    try { localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light'); } catch (error) {}
+  }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
+    const icon = document.getElementById('themeToggleIcon');
+    if (icon) icon.textContent = html.classList.contains('dark') ? 'light_mode' : 'dark_mode';
 
-  </main>
+    const themeButton = document.getElementById('themeToggleBtn');
+    if (themeButton) themeButton.addEventListener('click', toggleTheme);
 
-  <footer>
-    <small>© <span id="year"></span> Wilfame Esponilla</small>
-  </footer>
-  
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script src="script.js"></script>
+    const revealElements = document.querySelectorAll('.reveal-card');
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach((element) => element.classList.add('revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach((element) => observer.observe(element));
+  });
+</script>
+
 
 </body>
 </html>
-

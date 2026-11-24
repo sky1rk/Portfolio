@@ -1,31 +1,30 @@
 # Portfolio Website
 
-This is my personal portfolio website, built using HTML, CSS, and JavaScript. It showcases my skills, projects, and background in technology and provides a clean, interactive, and responsive experience for visitors.
+Personal portfolio for Wilfame Esponilla, showcasing background, skills, selected projects, achievements, and contact details.
+
+The current design is a single-page, responsive "Ghibli Reverie" portfolio with a persistent light/dark theme toggle. The theme uses Tailwind CSS utility classes backed by CSS variables, so both palettes share the same markup and stay in sync.
 
 ## Features
 
-- Home page with a welcome message and downloadable CV.
-- About Me page highlighting personal background, skills, and interests.
-- Portfolio page featuring projects displayed with a slider for easy navigation.
-- Contact page for reaching out via email.
-- Responsive design for desktop, tablet, and mobile devices.
-- Interactive elements and smooth transitions using JavaScript and CSS.
-
-Note: The Send button currently opens the email client and does not send emails automatically. If the user has no default email client, it may open the browser or fail.
+- Hero introduction with quick links and section navigation
+- About section with technical skills and competencies
+- Featured creations/project showcase
+- Education, academic honors, and key achievements
+- Contact section with direct links and an interactive message form
+- Light/dark theme toggle with preference saved in `localStorage`
+- Responsive layouts for desktop, tablet, and mobile
+- Scroll-reveal animations with reduced-motion support
 
 ## Technologies Used
 
-- HTML5 for page structure
-- CSS3 for styling and animations
-- JavaScript for interactivity and dynamic content
+- HTML5
+- Tailwind CSS (Play CDN)
+- CSS custom properties for theming
+- JavaScript for theme switching, form feedback, and scroll reveals
 
+## Deployment
 
-## Installation and Usage
+The site is deployed to Vercel from the `main` branch of this repository:
+https://esponillaportfolio.vercel.app
 
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/sky1rk/Portfolio.git
-
-   
-
-
+Pushing to `main` triggers a new Vercel deployment automatically.
