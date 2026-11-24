@@ -1,18 +1,34 @@
 # Portfolio Website
 
-A single-page personal portfolio for Wilfame Esponilla.
+Personal portfolio for Wilfame Esponilla, showcasing background, skills, selected projects, achievements, and contact details.
+
+The current design is a single-page, responsive "Ghibli Reverie" portfolio with a persistent light/dark theme toggle. The theme uses Tailwind CSS utility classes backed by CSS variables, so both palettes share the same markup and stay in sync.
 
 ## Features
 
-- Light/dark theme toggle that remembers the choice and follows the system preference on first visit
-- Hero section with falling sakura petals, a short introduction, and buttons for exploring projects and downloading the CV (`resume.pdf`)
-- GitHub, email, and theme buttons placed in the hero only, aligned to the right edge
-- Plain-text section navigation fixed and vertically centered on the right at every screen size, with an underline on the active section and a bottom-to-top color sweep as the hero scrolls away
-- About section with a biography and a technical skills toolbelt
-- Featured Creations section with four projects (Kalye Corazón, VERIFYX, Pal.se, and Notiva), each with an image, technology tags, and an external link
-- Education and Key Achievements section covering academic background, honors, coursework, leadership, and competition recognitions
-- Contact section with email, location, phone, and social links
-- Message form that emails submissions directly and shows a success toast, with a prefilled email fallback if delivery fails
+- Plain section navigation vertically centered on the right side at every screen size, with responsive spacing and text sizing
+- Responsive section padding reserves room for the fixed nav so content never overlaps it
+- Nav color adapts as soon as the hero background clears the nav, cascading one link at a time from bottom to top
+- Underline appears directly beneath the active nav link while scrolling
+- Downloadable CV (`resume.pdf`) linked from the hero button
+- About section with technical skills and competencies
+- Featured creations/project showcase
+- Education, academic honors, and key achievements
+- Contact section with direct links and an interactive message form
+- Light/dark theme toggle with preference saved in `localStorage`
 - Responsive layouts for desktop, tablet, and mobile
-- Scroll-reveal animations that are disabled when reduced motion is preferred
-- Footer with a back-to-top link
+- Scroll-reveal animations with reduced-motion support
+
+## Technologies Used
+
+- HTML5
+- Tailwind CSS (Play CDN)
+- CSS custom properties for theming
+- JavaScript for theme switching, form feedback, and scroll reveals
+
+## Deployment
+
+The site is deployed to Vercel from the `main` branch of this repository:
+https://esponillaportfolio.vercel.app
+
+Pushing to `main` triggers a new Vercel deployment automatically.
