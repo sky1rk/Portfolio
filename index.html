@@ -194,6 +194,11 @@ body.in-content .side-nav-link{color:rgb(var(--c-on-surface));text-shadow:none;}
 body.in-content .side-nav-link:hover{color:rgb(var(--c-primary));}
 .side-nav-link[aria-current="location"]{color:#fbcfe8;font-weight:700;}
 body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primary));}
+/* Sliding section indicator under the nav */
+.side-nav-progress{background:rgba(255,255,255,.25);transition:background .45s ease;}
+.side-nav-progress-fill{background:#fbcfe8;transform:translateX(0);transition:transform .45s cubic-bezier(.22,1,.36,1),background .45s ease;will-change:transform;}
+body.in-content .side-nav-progress{background:rgb(var(--c-outline-variant) / .6);}
+body.in-content .side-nav-progress-fill{background:rgb(var(--c-primary));}
 
 /* Dark-mode hero accent tuning */
 .dark .hero-badge{background:rgba(30,27,75,.7);color:#c7d2fe;border-color:rgba(180,169,252,.3);box-shadow:0 0 20px rgba(180,169,252,.2);}
@@ -221,6 +226,7 @@ body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primar
   <a class="side-nav-link py-1" href="#creations" title="Creations">Creations</a>
   <a class="side-nav-link py-1" href="#education" title="Education">Education</a>
   <a class="side-nav-link py-1" href="#contact" title="Contact">Contact</a>
+  <span class="side-nav-progress mt-2 block h-0.5 w-full overflow-hidden rounded-full" aria-hidden="true"><span class="side-nav-progress-fill block h-full w-1/5 rounded-full" id="navProgressFill"></span></span>
 </nav>
 <main class="w-full bg-background"><div class="flex flex-col w-full relative overflow-hidden">
 <!-- Floating Atmosphere Ambient Orbs (Pastel Ghibli clouds/aurora aesthetic) -->
@@ -947,12 +953,21 @@ body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primar
     if (themeButton) themeButton.addEventListener('click', toggleTheme);
 
     const sideLinks = Array.from(document.querySelectorAll('.side-nav-link'));
+    const progressFill = document.getElementById('navProgressFill');
+    const sectionIds = ['hero', 'about', 'creations', 'education', 'contact'];
     const updateActiveNav = () => {
-      const current = window.location.hash || '#hero';
+      const markerY = window.innerHeight * 0.35;
+      let currentId = sectionIds[0];
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= markerY) currentId = id;
+      });
+      const index = Math.max(0, sectionIds.indexOf(currentId));
       sideLinks.forEach((link) => {
-        if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'location');
+        if (link.getAttribute('href') === '#' + currentId) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
+      if (progressFill) progressFill.style.transform = `translateX(${index * 100}%)`;
     };
     sideLinks.forEach((link) => {
       link.addEventListener('click', () => {
@@ -960,6 +975,7 @@ body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primar
         updateActiveNav();
       });
     });
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
     window.addEventListener('hashchange', updateActiveNav);
     updateActiveNav();
 
