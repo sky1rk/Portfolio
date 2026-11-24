@@ -180,9 +180,12 @@
 .dark .dark-hero-image{opacity:1;}
 
 /* Dark-mode quick navigation dock */
-.icon-rail{display:none;}
-@media (min-width:1024px){.dark .icon-rail{display:flex;}}
-.dark .theme-dot{display:none!important;}
+/* Fixed side navigation: visible on desktop in both themes */
+.side-nav{display:none;}
+@media (min-width:1024px){.side-nav{display:flex;}}
+.dark .side-nav{background:rgba(20,24,45,.9);border-color:rgba(255,255,255,.1);box-shadow:0 8px 32px rgba(0,0,0,.6);}
+.side-nav-link{white-space:nowrap;}
+.side-nav-link[aria-current="location"]{background:rgb(var(--c-primary-container) / .2);color:rgb(var(--c-primary));}
 
 /* Dark-mode hero accent tuning */
 .dark .hero-badge{background:rgba(30,27,75,.7);color:#c7d2fe;border-color:rgba(180,169,252,.3);box-shadow:0 0 20px rgba(180,169,252,.2);}
@@ -278,7 +281,7 @@
 </div>
 </div>
 <!-- Vertical right-hand navigation list -->
-<nav class="lg:col-span-3 flex flex-row lg:flex-col items-start lg:items-end justify-start lg:justify-center flex-wrap gap-4 lg:gap-6 font-headline-sm text-headline-sm text-slate-200 font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+<nav class="lg:hidden flex flex-row items-start justify-start flex-wrap gap-4 font-headline-sm text-headline-sm text-slate-200 font-medium drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
 <a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#about"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>About</a>
 <a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#skills"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Skills</a>
 <a class="hover:text-pink-200 transition-all hover:translate-x-[-4px] flex items-center gap-2 text-white/90" href="#creations"><span class="theme-dot w-2 h-2 rounded-full bg-pink-300 hidden lg:inline-block shadow-[0_0_8px_#ffb0cf]"></span>Creations</a>
@@ -287,29 +290,33 @@
 </nav>
 </div>
 
-<!-- Theme-aware quick navigation dock (dark mode) -->
-<div class="icon-rail fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col gap-2.5 p-2 rounded-2xl bg-[#14182d]/90 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
-  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#hero" title="Home">
+<!-- Fixed side navigation (desktop) -->
+<nav class="side-nav fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col gap-1 p-2 rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md border border-surface-container-high/70 shadow-[0_8px_32px_-6px_rgba(138,127,214,0.18)]" aria-label="Section navigation">
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#hero" title="Home">
     <span class="material-symbols-outlined text-[20px]">home</span>
-    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Home</span>
+    <span class="font-label-md text-label-md font-semibold">Home</span>
   </a>
-  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#about" title="About &amp; Skills">
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#about" title="About">
     <span class="material-symbols-outlined text-[20px]">person</span>
-    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">About &amp; Skills</span>
+    <span class="font-label-md text-label-md font-semibold">About</span>
   </a>
-  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#creations" title="Creations">
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#skills" title="Skills">
     <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
-    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Creations</span>
+    <span class="font-label-md text-label-md font-semibold">Skills</span>
   </a>
-  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#education" title="Education">
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#creations" title="Creations">
+    <span class="material-symbols-outlined text-[20px]">dashboard_customize</span>
+    <span class="font-label-md text-label-md font-semibold">Creations</span>
+  </a>
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#education" title="Education">
     <span class="material-symbols-outlined text-[20px]">school</span>
-    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Education</span>
+    <span class="font-label-md text-label-md font-semibold">Education</span>
   </a>
-  <a class="p-2.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-2 group relative" href="#contact" title="Contact">
+  <a class="side-nav-link flex items-center gap-2.5 p-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#contact" title="Contact">
     <span class="material-symbols-outlined text-[20px]">mail</span>
-    <span class="absolute right-full mr-3 px-2.5 py-1 rounded-lg bg-[#0e1223] text-white font-label-sm text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">Contact</span>
+    <span class="font-label-md text-label-md font-semibold">Contact</span>
   </a>
-</div>
+</nav>
 
 <!-- Whimsical banner strip with frosted glass backdrop -->
 <div class="hero-banner flex flex-wrap items-center justify-between gap-3 py-3 px-5 rounded-2xl bg-slate-900/65 backdrop-blur-md border border-white/15 text-slate-200 font-label-sm text-label-sm shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
@@ -959,22 +966,37 @@
     const themeButton = document.getElementById('themeToggleBtn');
     if (themeButton) themeButton.addEventListener('click', toggleTheme);
 
-    const revealElements = document.querySelectorAll('.reveal-card');
-    if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((element) => element.classList.add('revealed'));
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
+    const sideLinks = Array.from(document.querySelectorAll('.side-nav-link'));
+    const updateActiveNav = () => {
+      const current = window.location.hash || '#hero';
+      sideLinks.forEach((link) => {
+        if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    };
+    sideLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        window.history.replaceState(null, '', link.getAttribute('href'));
+        updateActiveNav();
+      });
+    });
+    window.addEventListener('hashchange', updateActiveNav);
+    updateActiveNav();
 
-    revealElements.forEach((element) => observer.observe(element));
+    const revealElements = document.querySelectorAll('.reveal-card');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add('revealed'));
+    }
   });
 </script>
 
