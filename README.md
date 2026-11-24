@@ -1,34 +1,31 @@
 # Portfolio Website
 
-Personal portfolio for Wilfame Esponilla, showcasing background, skills, selected projects, achievements, and contact details.
-
-The current design is a single-page, responsive "Ghibli Reverie" portfolio with a persistent light/dark theme toggle. The theme uses Tailwind CSS utility classes backed by CSS variables, so both palettes share the same markup and stay in sync.
+This is my personal portfolio website, built using HTML, CSS, and JavaScript. It showcases my skills, projects, and background in technology and provides a clean, interactive, and responsive experience for visitors.
 
 ## Features
 
-- Plain section navigation vertically centered on the right side at every screen size, with responsive spacing and text sizing
-- Responsive section padding reserves room for the fixed nav so content never overlaps it
-- Nav color adapts as soon as the hero background clears the nav, cascading one link at a time from bottom to top
-- Underline appears directly beneath the active nav link while scrolling
-- Downloadable CV (`resume.pdf`) linked from the hero button
-- About section with technical skills and competencies
-- Featured creations/project showcase
-- Education, academic honors, and key achievements
-- Contact section with direct links and an interactive message form
-- Light/dark theme toggle with preference saved in `localStorage`
-- Responsive layouts for desktop, tablet, and mobile
-- Scroll-reveal animations with reduced-motion support
+- Home page with a welcome message and downloadable CV.
+- About Me page highlighting personal background, skills, and interests.
+- Portfolio page featuring projects displayed with a slider for easy navigation.
+- Contact page for reaching out via email.
+- Responsive design for desktop, tablet, and mobile devices.
+- Interactive elements and smooth transitions using JavaScript and CSS.
+
+Note: The Send button currently opens the email client and does not send emails automatically. If the user has no default email client, it may open the browser or fail.
 
 ## Technologies Used
 
-- HTML5
-- Tailwind CSS (Play CDN)
-- CSS custom properties for theming
-- JavaScript for theme switching, form feedback, and scroll reveals
+- HTML5 for page structure
+- CSS3 for styling and animations
+- JavaScript for interactivity and dynamic content
 
-## Deployment
 
-The site is deployed to Vercel from the `main` branch of this repository:
-https://esponillaportfolio.vercel.app
+## Installation and Usage
 
-Pushing to `main` triggers a new Vercel deployment automatically.
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/sky1rk/Portfolio.git
+
+   
+
+
