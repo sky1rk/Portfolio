@@ -181,7 +181,7 @@
 
 /* Plain section navigation, vertically centered on the right side */
 .side-nav{display:flex;}
-.side-nav-link{white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .45s cubic-bezier(.22,1,.36,1),text-shadow .45s cubic-bezier(.22,1,.36,1);}
+.side-nav-link{position:relative;white-space:nowrap;color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);transition:color .45s cubic-bezier(.22,1,.36,1),text-shadow .45s cubic-bezier(.22,1,.36,1);}
 /* Cascade the color sweep upward, one link at a time from bottom to top */
 .side-nav .side-nav-link:nth-child(5){transition-delay:0ms;}
 .side-nav .side-nav-link:nth-child(4){transition-delay:100ms;}
@@ -194,11 +194,10 @@ body.in-content .side-nav-link{color:rgb(var(--c-on-surface));text-shadow:none;}
 body.in-content .side-nav-link:hover{color:rgb(var(--c-primary));}
 .side-nav-link[aria-current="location"]{color:#fbcfe8;font-weight:700;}
 body.in-content .side-nav-link[aria-current="location"]{color:rgb(var(--c-primary));}
-/* Sliding section indicator under the nav */
-.side-nav-progress{background:rgba(255,255,255,.25);transition:background .45s ease;}
-.side-nav-progress-fill{background:#fbcfe8;transform:translateX(0);transition:transform .45s cubic-bezier(.22,1,.36,1),background .45s ease;will-change:transform;}
-body.in-content .side-nav-progress{background:rgb(var(--c-outline-variant) / .6);}
-body.in-content .side-nav-progress-fill{background:rgb(var(--c-primary));}
+/* Underline appears directly beneath the active section link */
+.side-nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:9999px;background:#fbcfe8;transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.22,1,.36,1),background .45s ease;pointer-events:none;}
+.side-nav-link[aria-current="location"]::after{transform:scaleX(1);}
+body.in-content .side-nav-link::after{background:rgb(var(--c-primary));}
 
 /* Dark-mode hero accent tuning */
 .dark .hero-badge{background:rgba(30,27,75,.7);color:#c7d2fe;border-color:rgba(180,169,252,.3);box-shadow:0 0 20px rgba(180,169,252,.2);}
@@ -226,7 +225,6 @@ body.in-content .side-nav-progress-fill{background:rgb(var(--c-primary));}
   <a class="side-nav-link py-1" href="#creations" title="Creations">Creations</a>
   <a class="side-nav-link py-1" href="#education" title="Education">Education</a>
   <a class="side-nav-link py-1" href="#contact" title="Contact">Contact</a>
-  <span class="side-nav-progress mt-2 block h-0.5 w-full overflow-hidden rounded-full" aria-hidden="true"><span class="side-nav-progress-fill block h-full w-1/5 rounded-full" id="navProgressFill"></span></span>
 </nav>
 <main class="w-full bg-background"><div class="flex flex-col w-full relative overflow-hidden">
 <!-- Floating Atmosphere Ambient Orbs (Pastel Ghibli clouds/aurora aesthetic) -->
@@ -953,7 +951,6 @@ body.in-content .side-nav-progress-fill{background:rgb(var(--c-primary));}
     if (themeButton) themeButton.addEventListener('click', toggleTheme);
 
     const sideLinks = Array.from(document.querySelectorAll('.side-nav-link'));
-    const progressFill = document.getElementById('navProgressFill');
     const sectionIds = ['hero', 'about', 'creations', 'education', 'contact'];
     const updateActiveNav = () => {
       const markerY = window.innerHeight * 0.35;
@@ -962,12 +959,10 @@ body.in-content .side-nav-progress-fill{background:rgb(var(--c-primary));}
         const section = document.getElementById(id);
         if (section && section.getBoundingClientRect().top <= markerY) currentId = id;
       });
-      const index = Math.max(0, sectionIds.indexOf(currentId));
       sideLinks.forEach((link) => {
         if (link.getAttribute('href') === '#' + currentId) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
-      if (progressFill) progressFill.style.transform = `translateX(${index * 100}%)`;
     };
     sideLinks.forEach((link) => {
       link.addEventListener('click', () => {
